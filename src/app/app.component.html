@@ -1,0 +1,11 @@
+<div class="container">
+  <app-search (searchtextchanged)="search($event)"></app-search>
+  
+  <div class="row pt-4">
+    <div class="col-lg-3" *ngFor="let item of products">
+      <div *ngIf="searchtext===''|| item.name.toLowerCase().includes(searchtext)">
+        <app-card  [product]="item"></app-card>
+      </div>
+    </div>
+  </div>
+</div>
